@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Clock View Delegate-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="RSD-Xj-h15">
+                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XR1-7f-s0c" customClass="KSClockView" customModule="Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78.5" width="236" height="236"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="XR1-7f-s0c" secondAttribute="height" id="Lu3-n1-l7x"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="interactable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="clockViewDelegate" destination="BYZ-38-t0r" id="NES-mc-lHg"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bh3-iW-pPf" customClass="KSClockView" customModule="Demo" customModuleProvider="target">
+                                        <rect key="frame" x="286" y="78.5" width="236" height="236"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bh3-iW-pPf" secondAttribute="height" id="aaS-TH-Ocp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="interactable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="faceImage" value="r2d2"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="clockViewDelegate" destination="BYZ-38-t0r" id="PXO-NU-XvV"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-hV-csR" customClass="KSClockView" customModule="Demo" customModuleProvider="target">
+                                        <rect key="frame" x="572" y="78.5" width="236" height="236"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MfU-hV-csR" secondAttribute="height" id="7fX-zZ-mAo"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="interactable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="faceImage" value="r2d2"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="hourHandImage" value="hour"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="minuteHandImage" value="minute"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="clockViewDelegate" destination="BYZ-38-t0r" id="NvA-vu-y99"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RSD-Xj-h15" secondAttribute="trailing" id="Akj-mN-dfo"/>
+                            <constraint firstItem="RSD-Xj-h15" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aNc-Uk-FA8"/>
+                            <constraint firstItem="RSD-Xj-h15" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="prF-f3-KZH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RSD-Xj-h15" secondAttribute="bottom" id="s77-wz-LUj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="clock1" destination="XR1-7f-s0c" id="VBo-fA-fxg"/>
+                        <outlet property="clock2" destination="bh3-iW-pPf" id="BAX-x7-BxW"/>
+                        <outlet property="clock3" destination="MfU-hV-csR" id="MAU-wM-6k3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hour" width="22.5" height="197.5"/>
+        <image name="minute" width="22.5" height="281"/>
+        <image name="r2d2" width="250" height="308.5"/>
+    </resources>
+</document>
